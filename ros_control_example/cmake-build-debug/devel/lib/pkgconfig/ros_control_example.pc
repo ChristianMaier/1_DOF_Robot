@@ -1,0 +1,8 @@
+prefix=/home/christian/python_projects/ROS/1_DOF_Robot/src/ros_control_example/cmake-build-debug/devel
+
+Name: ros_control_example
+Description: Description of ros_control_example
+Version: 0.0.0
+Cflags: -I/home/christian/python_projects/ROS/1_DOF_Robot/src/ros_control_example/cmake-build-debug/devel/include -I/home/christian/python_projects/ROS/1_DOF_Robot/src/ros_control_example/include
+Libs: -L${prefix}/lib 
+Requires: controller_manager roscpp rospy std_msgs std_srvs message_runtime

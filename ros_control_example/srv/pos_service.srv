@@ -1,0 +1,4 @@
+# Get the position of the joint of the arduino
+float32 dummy
+---
+float32 pos
