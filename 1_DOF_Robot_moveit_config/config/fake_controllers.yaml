@@ -1,0 +1,7 @@
+controller_list:
+  - name: fake_arm_controller
+    joints:
+      - Joint_1
+initial:  # Define initial robot poses.
+  - group: arm
+    pose: initial
