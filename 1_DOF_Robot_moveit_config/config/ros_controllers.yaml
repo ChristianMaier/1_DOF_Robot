@@ -17,14 +17,10 @@ joint_state_controller:
   type: joint_state_controller/JointStateController
   publish_rate: 50
 controller_list:
-  []
-one_dof_controller:
-  type: position_controllers/JointPositionController
-  joints:
-    Joint_1
-  gains:
-    Joint_1:
-      p: 100
-      d: 1
-      i: 1
-      i_clamp: 1
+ - name: joint1_position_controller
+   action_ns: follow_joint_trajectory
+   type: FollowJointTrajectory
+   default: true
+   joints:
+     - Joint_1
+

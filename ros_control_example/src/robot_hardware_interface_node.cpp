@@ -22,7 +22,7 @@ ROBOTHardwareInterface::~ROBOTHardwareInterface() {
 void ROBOTHardwareInterface::init() {
     
     
-	joint_name_="joint1";
+	joint_name_="Joint_1";
     
 // Create joint state interface
     hardware_interface::JointStateHandle jointStateHandle(joint_name_, &joint_position_, &joint_velocity_, &joint_effort_);
@@ -40,11 +40,12 @@ void ROBOTHardwareInterface::init() {
     hardware_interface::JointHandle jointEffortHandle(jointStateHandle, &joint_effort_command_);
 	effort_joint_interface_.registerHandle(jointEffortHandle);
 	
-// Create Joint Limit interface   
-    joint_limits_interface::JointLimits limits;
-    joint_limits_interface::getJointLimits("joint1", nh_, limits);
-	joint_limits_interface::EffortJointSaturationHandle jointLimitsHandle(jointEffortHandle, limits);
-	effortJointSaturationInterface.registerHandle(jointLimitsHandle);
+// Create Joint Limit interface
+
+//    joint_limits_interface::JointLimits limits;
+//    joint_limits_interface::getJointLimits("Joint_1", nh_, limits);
+//	joint_limits_interface::EffortJointSaturationHandle jointLimitsHandle(jointEffortHandle, limits);
+//	effortJointSaturationInterface.registerHandle(jointLimitsHandle);
 	
 /*
 If you have more joints then,
