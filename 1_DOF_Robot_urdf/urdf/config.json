@@ -1,0 +1,10 @@
+{
+    "documentId": "6f4d7ccbf42453e15f6ef32d",
+    "outputFormat": "urdf",
+    "assemblyName": "1_DOF_Robot",
+    "useScads": true,
+    "mergeSTLs": "visual",
+    "packageName": "1_DOF_Robot_urdf/urdf/",
+    "robotName": "1_DOF_Robot"
+}
+

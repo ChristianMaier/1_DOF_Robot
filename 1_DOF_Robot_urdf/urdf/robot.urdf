@@ -1,0 +1,64 @@
+<robot name="1_DOF_Robot">
+<link name="1m3a">
+<collision>
+<origin xyz="1.25767e-17 6.93889e-18 0" rpy="3.14159 -9.86076e-31 -2.08167e-16" />
+<geometry>
+<mesh filename="package://1_DOF_Robot_urdf/urdf/1m3a.stl"/>
+</geometry>
+<material name="1m3a_material">
+<color rgba="0.231373 0.380392 0.705882 1.0"/>
+</material>
+</collision>
+<visual>
+<origin xyz="0 0 0" rpy="0 -0 0" />
+<geometry>
+<mesh filename="package://1_DOF_Robot_urdf/urdf/1m3a_visual.stl"/>
+</geometry>
+<material name="1m3a_material">
+<color rgba="0.231373 0.380392 0.705882 1.0"/>
+</material>
+</visual>
+<inertial>
+<origin xyz="0.000726912 6.68612e-09 0.0303138" rpy="0 0 0"/>
+<mass value="0.240483" />
+<inertia ixx="0.00015749" ixy="5.27874e-12"  ixz="-2.17389e-07" iyy="0.00015728" iyz="-1.20249e-10" izz="0.000136557" />
+</inertial>
+</link>
+
+<link name="part_1">
+<collision>
+<origin xyz="2.39609e-17 0 -0.0185" rpy="0 -0 6.6112e-34" />
+<geometry>
+<mesh filename="package://1_DOF_Robot_urdf/urdf/part_1.stl"/>
+</geometry>
+<material name="part_1_material">
+<color rgba="0.615686 0.811765 0.929412 1.0"/>
+</material>
+</collision>
+<visual>
+<origin xyz="0 0 0" rpy="0 -0 0" />
+<geometry>
+<mesh filename="package://1_DOF_Robot_urdf/urdf/part_1_visual.stl"/>
+</geometry>
+<material name="part_1_material">
+<color rgba="0.615686 0.811765 0.929412 1.0"/>
+</material>
+</visual>
+<inertial>
+<origin xyz="-0.00441519 3.41163e-09 -0.00682365" rpy="0 0 0"/>
+<mass value="0.00490677" />
+<inertia ixx="1.82174e-07" ixy="-1.31821e-13"  ixz="3.3119e-09" iyy="2.48354e-07" iyz="-2.92209e-14" izz="2.79543e-07" />
+</inertial>
+</link>
+
+<joint name="Joint_1" type="revolute">
+<origin xyz="0.000762542 -7.13864e-18 0.0835" rpy="1.07969e-17 -6.12323e-17 -5.55112e-17" />
+<parent link="1m3a" />
+<child link="part_1" />
+<axis xyz="0 0 1"/>
+<limit effort="1" velocity="20" lower="-3.14159" upper="3.14159"/>
+<joint_properties friction="0.0"/>
+</joint>
+
+
+</robot>
