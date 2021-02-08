@@ -1,5 +1,7 @@
 <launch>
 
+  <arg name="serial_port" default="/dev/ttyACM0" />
+
   <!-- specify the planning pipeline -->
   <arg name="pipeline" default="ompl" />
 
@@ -64,7 +66,7 @@
   </include>
 
   <rosparam file="$(find ros_control_example)/config/controllers.yaml" command="load"/>
-  <node name="rosserial_arduino_node" pkg="rosserial_arduino" type="serial_node.py" args="/dev/ttyACM0" />
+  <node name="rosserial_arduino_node" pkg="rosserial_arduino" type="serial_node.py" args="$(arg serial_port)" />
   <node name="robot_hardware_interface" pkg="ros_control_example" type="single_joint_hardware_interface" output="screen"/>
 
   <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen"
